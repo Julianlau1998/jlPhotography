@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div id="wrapper">
         <div class="jumbotron">
              <img src="../assets/jlp.png" alt="jlpIcon" class="icon">
             <h1 class="display-4">
                 JL Photography
                 </h1>
             <p class="lead">
-                Welcome to my page, I hope You have fun exploring my pictures!
+                Welcome to my website, I hope You have fun exploring my pictures!
             </p>
             <hr class="my-4">
             <!--
@@ -23,7 +23,7 @@
                 My Pictures
             </router-link>  
             <br><br>
-            <img src="../assets/fly.jpg" alt="fly" class="headerImageMobile">
+            <!--<img src="../assets/fly.jpg" alt="fly" class="headerImageMobile">-->
         </div>
     </div>
 </template>
@@ -35,18 +35,18 @@
         padding-top: 10rem;
         background-image: url("../assets/jumbotron.png");
         background-size: cover;
-        height: 45rem;
         height: 100vh;
+        width: 100vw;
     }
     .headerImageMobile {
         width: 0
     }
     .button {
-        border: 1px solid #636161;
+        border: 1px solid #acabab;
         border-radius: 52px;
         background: #c5c1c2;
-        box-shadow:  2px 2px 4px #636161, 
-                    -2px -2px 4px #ffffff; 
+        box-shadow:  1.5px 1.5px 3px #636161, 
+                    -1.5px -1.5px 3px #e9e5e5; 
         color: #2c3e50;     
         font-weight: 600;
     }
@@ -60,7 +60,8 @@
             padding-left: 0;
             padding-right: 0;
             padding: 1rem;
-            padding-top: 4rem;
+            padding-top: 12rem;
+            background-color: #c5c1c2;
         }
         .headerImageMobile {
             width: 100%;
@@ -68,14 +69,17 @@
             border-radius: 15px; 
         }
         .button {
-            border: 1px solid #898b8d;
+            border: 1px solid #acabab;
             border-radius: 91px;
-            background: #e9ecef;   
-            box-shadow:  5px 5px 6px #898b8d, 
-                -5px -5px 6px #ffffff;
+            background: #c5c1c2;   
+            box-shadow:  1.5px 1.5px 3px #636161, 
+                    -1.5px -1.5px 3px #e9e5e5; 
             color: #2c3e50;  
-            font-weight: 350;   
+            font-weight: 450;   
         }
+        .my-4{
+        width: 90%;
+    }
     }    
 </style>
 

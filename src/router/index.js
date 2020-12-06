@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Categories from '../views/Categories.vue'
+import Category from '../views/Category.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
     name: 'categories',
     component: Categories
   },
+  {
+    path: '/category/:name',
+    name: 'category',
+    component: Category
+  }
 ]
 
 const router = new VueRouter({
