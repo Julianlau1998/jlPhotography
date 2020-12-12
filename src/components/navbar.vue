@@ -10,9 +10,9 @@
             <img src="../assets/jlp.png" alt="logo" class="logoSmall">
         </div>
         <ul id="navList" v-if="windowWidth>725">
-            <li>Home</li>
-            <li>Categories</li>
-            <li>Contact</li>
+            <li><router-link to="/" class="link"> Home </router-link></li>
+            <li><router-link to="/categories" class="link"> Categories</router-link></li>
+            <li><router-link to="/" class="link"> Contact</router-link></li>
         </ul>
         <ul v-else id="hamburger">
             <li><img src="../assets/hamburger.png" alt="hamburger icon" id=hamburgerIcon></li>
@@ -66,6 +66,13 @@
         border-radius: 30px;
         padding: -10px;
         cursor: pointer;
+    }
+    .link{
+        color: black;
+    }
+    .link:hover {
+        color: white;
+        text-decoration: none;
     }
     #hamburger {
         position: fixed;

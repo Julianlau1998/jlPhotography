@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topImage">
-            <img src="../../assets/macro/macro_header.png" alt="landscape" class="topImage">
+            <img src="../../assets/macro/macro_header.png" alt="macro" class="topImage">
         </div>
         <a>
             <div class="arrow" id="arrow">
@@ -21,7 +21,6 @@
                 <img :src="require(`../../assets/macro/${image}.jpg`)" alt="" class="listImage">
             </li>
         </ul>
-        <br><br><br><br><br><br><br>
     </div>
 </template>
 

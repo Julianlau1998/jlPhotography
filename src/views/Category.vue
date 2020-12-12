@@ -9,7 +9,17 @@
     </div>
 </template>
 
-<style scoped>
+<style>
+    @media (max-width: 600px) {
+        .listImage{
+            width: 90vw;
+            margin-left: -1.2rem;
+        }
+        .topImage{
+            width: 100vw;
+            border-radius: 0;
+        }
+    }
 </style>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topImage">
-            <img src="../../assets/landscape/landscape_header.png" alt="landscape" class="topImage">
+            <img src="../../assets/landscape/landscape_header.jpg" alt="landscape" class="topImage">
         </div>
         <a>
             <div class="arrow" id="arrow">
@@ -18,12 +18,59 @@
         <br><br>
         <ul>
             <li v-for="(image, imageKey) in images" :key=imageKey>
-                <img :src="require(`../../assets/landscape/${image}.jpg`)" alt="" class="listImage">
+                <img :src="require(`../../assets/landscape/${image}.jpg`)" @click="largerImage(image)" class="listImage">
             </li>
         </ul>
-        <br><br><br><br><br><br><br>
+        <div v-if="largeImage">
+            <div class="largeImageBackground"></div>
+            <img :src="require(`../../assets/landscape/${images[currentImage]}.jpg`)" class="largeImage">
+            <button class="close" @click="closeImage">x</button>
+            <button class="arrowButton" id="arrowRight" @click="nextImage" ><img src="../../assets/arrow.png" alt="arrow" class="arrowImage"></button>
+            <button class="arrowButton" id="arrowLeft" @click="lastImage"><img src="../../assets/arrowLeft.png" alt="arrow" class="arrowImage"></button>
+        </div>
+        <br>
     </div>
 </template>
+
+<script>
+export default {
+    data () {
+        return {
+            test: '../../assets/landscape/landscape.jpg',
+            images: [
+                'landscape',
+                'landscape2',
+                'kaiserstuhl',
+                'isar',
+                'wald'
+            ],
+            currentImage: 0,
+            largeImage: false
+        }
+    },
+    created () {
+    },
+    methods: {
+        largerImage (image) {
+            for (let i = 0; i < this.images.length; i++) {
+                if(this.images[i] === image) {
+                    this.currentImage = i
+                }
+            }
+            this.largeImage = true
+        },
+        nextImage () {
+            this.currentImage++
+        },
+        lastImage() {
+            this.currentImage--
+        },
+        closeImage() {
+            this.largeImage = false
+        }
+    }
+}
+</script>
 
 <style>
     .topImage{
@@ -70,6 +117,49 @@
         border-radius: 25px;
          box-shadow:  1.5px 1.5px 3px #636161, 
                     -1.5px -1.5px 3px #e9e5e5; 
+        cursor: pointer;
+    }
+    .largeImage{
+        position: fixed;
+        top: 1vh;
+        left: 5vw;
+        width: 90vw;
+    }
+    .largeImageBackground{
+        position: fixed;
+        top: 0rem;
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.8;
+    }
+    .arrowButton{
+        position: fixed;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    #arrowRight{
+        right: 0rem;
+        top: 45vh;
+    }
+    #arrowLeft{
+        left: 0rem;
+        top: 45vh;
+    }
+    .arrowImage{
+        width: 10rem;
+    }
+    .close {
+        position: fixed;
+        top: 0.5rem;
+        right: 1rem;
+        color: white;
+        font-size: 4rem;
+        outline: none;
+        cursor: pointer;
     }
     ul li {
         list-style-type: none;
@@ -139,22 +229,3 @@
 }
 
 </style>
-
-<script>
-export default {
-    data () {
-        return {
-            test: '../../assets/landscape/landscape.jpg',
-            images: [
-                'landscape',
-                'landscape2',
-                'kaiserstuhl',
-                'isar',
-                'wald'
-            ]
-        }
-    },
-    created () {
-    }
-}
-</script>

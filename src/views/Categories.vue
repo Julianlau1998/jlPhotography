@@ -1,69 +1,67 @@
 <template>
 <div>
-<navbar />
-    <ul id="listWrapper">
-        <li>
-            <div>
-                <router-link to="/category/landscape">
-                    <button id="imageButton" class="landscape"></button>
-                </router-link>
-                <h3>Landscape</h3>
+    <navbar />
+        <div id="listWrapper" class="row">
+            <div class="column">
+                    <router-link to="/category/landscape">
+                        <button id="imageButton" class="landscape"></button>
+                    </router-link>
+                    <h3 class="categoryText">Landscape</h3>
             </div>
-        </li>
-        <li>
-            <div>
-                <router-link to="/category/macro">
-                    <button id="imageButton" class="macro"></button>
-                </router-link>
-                <h3>Macro</h3>
+            <div class="column">
+                    <router-link to="/category/macro">
+                        <button id="imageButton" class="macro"></button>
+                    </router-link>
+                    <h3 class="categoryText">Macro</h3>
             </div>
-        </li>
-        <li>
-            <div>
-                <router-link to="/category/city">
-                    <button id="imageButton" class="city"></button>
-                </router-link>
-                <h3>City</h3>
+            <div class="column">
+                    <router-link to="/category/city">
+                        <button id="imageButton" class="city"></button>
+                    </router-link>
+                    <h3 class="categoryText">City</h3>
             </div>
-        </li>
-        <li>
-            <div>
-                <router-link to="/category/astro">
-                    <button id="imageButton" class="astro"></button>
-                </router-link>
-                <h3>Astro</h3>
+            <div class="column">
+                    <router-link to="/category/astro">
+                        <button id="imageButton" class="astro"></button>
+                    </router-link>
+                    <h3 class="categoryText">Astro</h3>
             </div>
-        </li>
-        <li>
-            <div>
-                <router-link to="/category/abstract">
-                    <button id="imageButton" class="abstract"></button>
-                </router-link>
-                <h3>Abstract</h3>
+            <div class="column">
+                    <router-link to="/category/abstract">
+                        <button id="imageButton" class="abstract"></button>
+                    </router-link>
+                    <h3 class="categoryText">Abstract</h3>
             </div>
-        </li>
-    </ul>
+        </div>
 </div>
 </template>
 
-<style scoped>
+<style>
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 3.5rem;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 #listWrapper {
-  padding-top: 10rem;
+  padding-top: 13rem;
 }
-ul li {
-    list-style-type: none;
-    display: inline-block;
-    margin: 3.5rem;
-    z-index: 0;
-}
+
 #imageButton{
-    width: 30rem;
-    height: 20rem;
+    width: 35rem;
+    height: 23rem;
     border: 1px solid #acabab;
     outline: none;
-        border-radius: 25px;
-        box-shadow:  1.5px 1.5px 3px #636161, 
-                    -1.5px -1.5px 3px #ffffff; 
+    border-radius: 25px;
+    box-shadow:  1.5px 1.5px 3px #636161, 
+                -1.5px -1.5px 3px #ffffff; 
 }
 .landscape{
     background:url('../assets/landscape/landscape.jpg') center no-repeat; background-size: 100% 100%;
@@ -80,6 +78,11 @@ ul li {
 .abstract{
     background:url('../assets/abstract/abstract.jpg') center no-repeat; background-size: 100% 100%;
 }
+@media (max-width: 1230px) {
+    .column {
+        width: 100%;
+}
+}
 @media (max-width: 632px) {
     #listWrapper{
         margin: none;
@@ -87,10 +90,14 @@ ul li {
     #imageButton{
         width: 20em;
         height: 13.2rem;
+        margin-left: -2rem;
     }
     ul li{
         margin: 0;
         padding: 0;
+    }
+    .categoryText{
+        margin-left: 2rem;
     }
 }
 @media (max-width: 632px) {

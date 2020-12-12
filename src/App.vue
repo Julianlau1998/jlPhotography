@@ -14,6 +14,7 @@
   text-align: center;
   color: #2c3e50;
   margin: 0rem;
+  overflow-x: hidden;
 }
 body {
     background-color: #c5c1c2;
