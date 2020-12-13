@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topImage">
-            <img src="../../assets/macro/macro_header.png" alt="macro" class="topImage">
+            <img src="../../assets/macro/macro_header.jpg" alt="macro" class="topImage">
         </div>
         <a>
             <div class="arrow" id="arrow">

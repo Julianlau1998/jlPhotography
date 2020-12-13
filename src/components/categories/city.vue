@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topImage">
-            <img src="../../assets/city/city_header2.png" alt="city" class="topImage">
+            <img src="../../assets/city/city_header2.jpg" alt="city" class="topImage">
         </div>
         <a>
             <div class="arrow" id="arrow">
