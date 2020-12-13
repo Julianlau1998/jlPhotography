@@ -13,7 +13,7 @@
                  </h6>
              <hr>
              <br>
-             <h6>Other than photography, I also love building Apps and Websites
+             <h6>Other than photography, I also love building Apps and Websites.
                  You can look at them at 
                  <a href="https://julianlau1998.github.io"> 
                      Julianlau1998.github.io 
