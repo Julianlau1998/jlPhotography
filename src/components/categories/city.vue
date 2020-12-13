@@ -14,13 +14,20 @@
             <span class="left-bar"></span>
             <span class="right-bar"></span>
         </a>
-        <p class="categoryText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ab libero repellat corporis repudiandae. Voluptatibus, ratione alias? Officiis accusamus, consequuntur nemo ullam iusto deleniti, magni doloremque ipsum error illum dignissimos.</p>
+        <p class="categoryText">This is a collection of my favorite City pictures. <br>Just click on one, to view it in fullscreen.</p>
         <br><br>
         <ul>
             <li v-for="(image, imageKey) in images" :key=imageKey>
-                <img :src="require(`../../assets/city/${image}.jpg`)" alt="" class="listImage">
+                <img :src="require(`../../assets/city/${image}.jpg`)" @click="largerImage(image)" class="listImage">
             </li>
         </ul>
+        <div v-if="largeImage">
+            <div class="largeImageBackground"></div>
+            <img :src="require(`../../assets/city/${images[currentImage]}.jpg`)" class="largeImage">
+            <button class="close" @click="closeImage">x</button>
+            <button class="arrowButton" id="arrowRight" @click="nextImage" ><img src="../../assets/arrow.png" alt="arrow" class="arrowImage"></button>
+            <button class="arrowButton" id="arrowLeft" @click="lastImage"><img src="../../assets/arrowLeft.png" alt="arrow" class="arrowImage"></button>
+        </div>
     </div>
 </template>
 
@@ -40,7 +47,30 @@ export default {
                 'kranhaeuser',
                 'zuelpicher',
                 'bicycle',
-            ]
+            ],
+            currentImage: 0,
+            largeImage: false
+        }
+    },
+    created () {
+    },
+    methods: {
+        largerImage (image) {
+            for (let i = 0; i < this.images.length; i++) {
+                if(this.images[i] === image) {
+                    this.currentImage = i
+                }
+            }
+            this.largeImage = true
+        },
+        nextImage () {
+            this.currentImage++
+        },
+        lastImage() {
+            this.currentImage--
+        },
+        closeImage() {
+            this.largeImage = false
         }
     }
 }

@@ -14,7 +14,7 @@
             <span class="left-bar"></span>
             <span class="right-bar"></span>
         </a>
-        <p class="categoryText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ab libero repellat corporis repudiandae. Voluptatibus, ratione alias? Officiis accusamus, consequuntur nemo ullam iusto deleniti, magni doloremque ipsum error illum dignissimos.</p>
+        <p class="categoryText">This is a collection of my favorite Landscpe pictures. <br>Just click on one, to view it in fullscreen.</p>
         <br><br>
         <ul>
             <li v-for="(image, imageKey) in images" :key=imageKey>
@@ -25,7 +25,7 @@
             <div class="largeImageBackground"></div>
             <img :src="require(`../../assets/landscape/${images[currentImage]}.jpg`)" class="largeImage">
             <button class="close" @click="closeImage">x</button>
-            <button class="arrowButton" id="arrowRight" @click="nextImage" ><img src="../../assets/arrow.png" alt="arrow" class="arrowImage"></button>
+            <button class="arrowButton" id="arrowRight" @click="nextImage" @keyup.right="nextImage"><img src="../../assets/arrow.png" alt="arrow" class="arrowImage"></button>
             <button class="arrowButton" id="arrowLeft" @click="lastImage"><img src="../../assets/arrowLeft.png" alt="arrow" class="arrowImage"></button>
         </div>
         <br>
@@ -73,6 +73,9 @@ export default {
 </script>
 
 <style>
+img{
+    cursor: pointer;
+}
     .topImage{
         width: 100vw;
         border-radius: 0px;
@@ -120,10 +123,11 @@ export default {
         cursor: pointer;
     }
     .largeImage{
+        margin: auto;
         position: fixed;
-        top: 1vh;
-        left: 5vw;
-        width: 90vw;
+        top: 0; left: 0; bottom: 0; right: 0;
+        max-width: 100%;
+        max-height: 100%;
     }
     .largeImageBackground{
         position: fixed;
@@ -141,13 +145,20 @@ export default {
         outline: none;
         cursor: pointer;
     }
+    .arrowButton :focus{
+        outline: 0 !important;
+    }
     #arrowRight{
-        right: 0rem;
+        right: -3.5rem;
         top: 45vh;
+        outline: none;
+        cursor: pointer;
     }
     #arrowLeft{
-        left: 0rem;
+        left: -3.5rem;
         top: 45vh;
+        outline: none;
+        cursor: pointer;
     }
     .arrowImage{
         width: 10rem;
@@ -158,8 +169,10 @@ export default {
         right: 1rem;
         color: white;
         font-size: 4rem;
-        outline: none;
         cursor: pointer;
+    }
+    .close :focus{
+        outline: none !important;
     }
     ul li {
         list-style-type: none;

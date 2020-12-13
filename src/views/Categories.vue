@@ -90,7 +90,6 @@
     #imageButton{
         width: 20em;
         height: 13.2rem;
-        margin-left: -2rem;
     }
     ul li{
         margin: 0;

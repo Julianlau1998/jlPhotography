@@ -12,13 +12,49 @@
         <ul id="navList" v-if="windowWidth>725">
             <li><router-link to="/" class="link"> Home </router-link></li>
             <li><router-link to="/categories" class="link"> Categories</router-link></li>
-            <li><router-link to="/" class="link"> Contact</router-link></li>
+            <li><router-link to="/contact" class="link"> Contact</router-link></li>
         </ul>
-        <ul v-else id="hamburger">
-            <li><img src="../assets/hamburger.png" alt="hamburger icon" id=hamburgerIcon></li>
+        <ul v-else id="hamburger" @click="hamburgerClicked = !hamburgerClicked">
+            <li v-if="!hamburgerClicked"><img src="../assets/hamburger.png" alt="hamburger icon" id=hamburgerIcon></li>
+            <li v-if="hamburgerClicked" id="close">X</li>
         </ul>
+        <div id="responsiveNavbar" v-if="hamburgerClicked">
+            <ul>
+                <li><router-link to="/" id="responsiveLink"> Home </router-link></li>
+                <li><router-link to="/categories" id="responsiveLink"> Categories</router-link></li>
+                <li><router-link to="/contact" id="responsiveLink"> Contact</router-link></li>
+            </ul>
+        </div>
     </div>
 </template>
+
+<script>
+export default {
+    data () {
+        return {
+            windowWidth: window.innerWidth,
+            yOffset: 0,
+            hamburgerClicked: false
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', () => {
+            this.windowWidth = window.innerWidth
+        })
+    },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll () {
+            this.yOffset = window.pageYOffset
+        }
+    }
+}
+</script>
 
 <style scoped>
     #wrapper {
@@ -77,6 +113,7 @@
     #hamburger {
         position: fixed;
         right: 0;
+        z-index: 100;
     }
     #hamburgerIcon{
         width: 2rem;
@@ -88,31 +125,24 @@
     #titleScrolledDown {
         margin-left: 2.8rem;
     }
-</style>
-
-<script>
-export default {
-    data () {
-        return {
-            windowWidth: window.innerWidth,
-            yOffset: 0
-        }
-    },
-    mounted() {
-        window.addEventListener('resize', () => {
-            this.windowWidth = window.innerWidth
-        })
-    },
-    created () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-    methods: {
-        handleScroll () {
-            this.yOffset = window.pageYOffset
-        }
+    #responsiveNavbar{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+        background-color: black;
+        padding-top: 10rem;
     }
-}
-</script>
+    #responsiveLink {
+        color: white;
+        display:table;
+        margin: 0 auto 0 auto;
+    }
+    #close {
+        color: white;
+        margin-top: 0.5rem;
+        font-size: 3rem;
+    }
+</style>

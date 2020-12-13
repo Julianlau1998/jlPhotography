@@ -20,6 +20,15 @@ body {
     background-color: #c5c1c2;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+button :focus{
+  outline: none;
+}
+
 .header {
 }
 .icon {

@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Categories from '../views/Categories.vue'
 import Category from '../views/Category.vue'
+import Contact from '../views/Contact.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,6 +22,11 @@ const routes = [
     path: '/category/:name',
     name: 'category',
     component: Category
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
   }
 ]
 
