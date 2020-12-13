@@ -70,7 +70,7 @@
     background:url('../assets/fly.jpg') center no-repeat; background-size: 100% 100%;
 }
 .city{
-    background:url('../assets/city/city.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('../assets/city/city1.jpg') center no-repeat; background-size: 100% 100%;
 }
 .astro{
     background:url('../assets/astro/astro.jpg') center no-repeat; background-size: 100% 100%;
