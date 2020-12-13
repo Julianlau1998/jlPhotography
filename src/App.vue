@@ -47,4 +47,7 @@ button :focus{
 .fade-leave-active {
   opacity: 0
 }
+.close{
+  z-index: 15;
+}
 </style>

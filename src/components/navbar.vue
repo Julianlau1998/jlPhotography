@@ -113,7 +113,7 @@ export default {
     #hamburger {
         position: fixed;
         right: 0;
-        z-index: 100;
+        z-index: 10;
     }
     #hamburgerIcon{
         width: 2rem;
