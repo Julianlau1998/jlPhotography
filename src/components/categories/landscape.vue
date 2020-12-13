@@ -60,10 +60,14 @@ export default {
             this.largeImage = true
         },
         nextImage () {
-            this.currentImage++
+            if( this.currentImage < this.images.length-1 ) {
+                this.currentImage++
+            } 
         },
         lastImage() {
-            this.currentImage--
+            if( this.currentImage > 0 ) {
+                this.currentImage--
+            } 
         },
         closeImage() {
             this.largeImage = false
