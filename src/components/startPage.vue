@@ -9,12 +9,7 @@
                 Welcome to my website, I hope You have fun exploring my pictures!
             </p>
             <hr class="my-4">
-            <!--
-                <p>
-                It uses utility classes for typography and spacing to space content out within the larger 
-                container.
-                </p>
-            -->  
+
             <router-link
             class="btn btn-dark btn-lg button" 
             href="#" 
@@ -23,7 +18,6 @@
                 My Pictures
             </router-link>  
             <br><br>
-            <!--<img src="../assets/fly.jpg" alt="fly" class="headerImageMobile">-->
         </div>
     </div>
 </template>
@@ -33,7 +27,7 @@
         padding-left: 35rem;
         padding-right: 3rem;
         padding-top: 10rem;
-        background-image: url("../assets/jumbotron.png");
+        background-image: url("../assets/jumbotron.jpg");
         background-size: cover;
         height: 100vh;
         width: 100vw;
