@@ -19,7 +19,7 @@
             <li v-if="hamburgerClicked" id="close">X</li>
         </ul>
         <div id="responsiveNavbar" v-if="hamburgerClicked">
-            <ul>
+            <ul id="responsiveList">
                 <li><router-link to="/" id="responsiveLink"> Home </router-link></li>
                 <li><router-link to="/categories" id="responsiveLink"> Categories</router-link></li>
                 <li><router-link to="/contact" id="responsiveLink"> Contact</router-link></li>
@@ -144,5 +144,9 @@ export default {
         color: white;
         margin-top: 0.5rem;
         font-size: 3rem;
+    }
+    #responsiveList{
+        list-style-type: none;
+        margin-right: 2rem;
     }
 </style>
