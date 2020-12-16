@@ -19,6 +19,24 @@
             width: 100vw;
             border-radius: 0;
         }
+        #arrowRight{
+            right: 3.5rem;
+            top: 45vh;
+            outline: none;
+            cursor: pointer;
+        }
+        #arrowLeft{
+            left: -5.5rem;
+            top: 45vh;
+            outline: none;
+            cursor: pointer;
+        }
+        .arrowImage{
+            width: 100rem;
+        }
+        .arrow-icon{
+            width: 4.1rem;
+        }
     }
 </style>
 
