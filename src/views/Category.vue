@@ -21,13 +21,13 @@
         }
         #arrowRight{
             right: -4.5rem;
-            top: 40vh;
+            top: 42vh;
             outline: none;
             cursor: pointer;
         }
         #arrowLeft{
             left: -8.5rem;
-            top: 40vh;
+            top: 42vh;
             outline: none;
             cursor: pointer;
         }
