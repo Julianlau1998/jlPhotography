@@ -43,6 +43,15 @@
   margin-bottom: 3.5rem;
 }
 
+.row {
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.categoryText{
+    width: 37vw;
+}
+
 /* Clear floats after image containers */
 .row::after {
   content: "";
@@ -78,10 +87,45 @@
 .abstract{
     background:url('../assets/abstract/abstract.jpg') center no-repeat; background-size: 100% 100%;
 }
+@media (max-width: 1690px) {
+    .row {
+        margin-left: 10rem;
+        margin-right: 10rem;
+}
+
+    .categoryText{
+        width: 39vw !important;
+    }
+}    
+@media (max-width: 1530px) {
+    .row {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    .categoryText{
+        width: 43vw !important;
+    }
+} 
+@media (max-width: 1340px) {
+    .row {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .categoryText{
+        width: 46vw !important;
+    }
+} 
 @media (max-width: 1230px) {
     .column {
         width: 100%;
-}
+    }
+    .row {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    .categoryText{
+        width: 100vw !important;
+    }
 }
 @media (max-width: 632px) {
     #listWrapper{
@@ -97,6 +141,9 @@
     }
     .categoryText{
         margin-left: 2rem;
+    }
+    .categoryText{
+        width: 85vw !important;
     }
 }
 @media (max-width: 632px) {

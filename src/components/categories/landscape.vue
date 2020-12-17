@@ -141,6 +141,7 @@ img{
         height: 100vh;
         background-color: black;
         opacity: 0.8;
+        z-index: 11rem;
     }
     .arrowButton{
         position: fixed;
@@ -151,6 +152,7 @@ img{
     }
     .arrowButton :focus{
         outline: 0 !important;
+        z-index: 15;
     }
     #arrowRight{
         right: -3.5rem;
@@ -174,6 +176,12 @@ img{
         color: white;
         font-size: 4rem;
         cursor: pointer;
+        opacity: 1;
+        padding:5rem;
+        background-color: white;
+        width: 2rem;
+        margin-left: 10rem;
+        margin-top: 2rem;
     }
     .close :focus{
         outline: none !important;
@@ -243,6 +251,12 @@ img{
     border-radius: 10px 6px 6px 10px;
     transition: all 0.5s cubic-bezier(.25,1.7,.35,.8);
     z-index: -1;
+}
+@media (max-width: 632px) {
+    .close {
+        width: 4rem;
+        margin-top: 3rem;
+    }
 }
 
 </style>

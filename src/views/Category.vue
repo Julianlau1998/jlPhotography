@@ -20,19 +20,20 @@
             border-radius: 0;
         }
         #arrowRight{
-            right: 3.5rem;
-            top: 45vh;
+            right: -4.5rem;
+            top: 40vh;
             outline: none;
             cursor: pointer;
         }
         #arrowLeft{
-            left: -5.5rem;
-            top: 45vh;
+            left: -8.5rem;
+            top: 40vh;
             outline: none;
             cursor: pointer;
         }
         .arrowImage{
-            width: 100rem;
+            width: 12rem;
+            margin-left: 4rem;
         }
         .arrow-icon{
             width: 4.1rem;
