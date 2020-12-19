@@ -22,7 +22,7 @@
             </li>
         </ul>
         <div v-if="largeImage">
-            <div class="largeImageBackground"></div>
+            <div class="largeImageBackground" @click="largeImage = !largeImage"></div>
             <img :src="require(`../../assets/landscape/${images[currentImage]}.jpg`)" class="largeImage">
             <button class="close" @click="closeImage">x</button>
             <button class="arrowButton" id="arrowRight" @click="nextImage" @keyup.right="nextImage"><img src="../../assets/arrow.png" alt="arrow" class="arrowImage"></button>
