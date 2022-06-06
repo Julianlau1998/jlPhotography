@@ -76,7 +76,9 @@
     }
     @media (max-width: 500px) {
         .main-header {
-            font-size: 2.5rem !important;
+            font-size: 2.3rem !important;
+            margin-top: 1rem;
+            word-break: break-all;
         }
         .icon {
             margin-top: -5rem;
