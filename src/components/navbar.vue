@@ -6,7 +6,7 @@
             <h3 id="title">JLPhotography</h3>
         </div>
         <div class="logoWrapper" v-else>
-            <h3 id="titleScrolledDown">JLPhotography</h3>
+            <h3 id="titleScrolledDown">JLP</h3>
             <img src="../assets/jlp.png" alt="logo" class="logoSmall">
         </div>
         <ul id="navList" v-if="windowWidth>725">
