@@ -15,8 +15,8 @@
              <br>
              <h6>Other than photography, I also love building Apps and Websites.
                  You can look at them at 
-                 <a href="https://julianlau1998.github.io"> 
-                     Julianlau1998.github.io 
+                 <a href="https://jlapps.de/"> 
+                     jlapps.de
                  </a> 
             </h6>
         </div>
