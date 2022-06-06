@@ -2,7 +2,7 @@
     <div id="wrapper">
         <div class="jumbotron">
              <img src="../assets/jlp.png" alt="jlpIcon" class="icon">
-            <h1 class="display-4">
+            <h1 class="display-4 main-header">
                 JL Photography
                 </h1>
             <p class="lead">
@@ -73,6 +73,14 @@
         }
         .my-4{
         width: 90%;
+    }
+    @media (max-width: 500px) {
+        .main-header {
+            font-size: 2.5rem !important;
+        }
+        .icon {
+            margin-top: -5rem;
+        }
     }
     }    
 </style>
