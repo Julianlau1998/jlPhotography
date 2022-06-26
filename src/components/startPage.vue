@@ -23,6 +23,9 @@
 </template>
 
 <style scoped>
+    #body {
+        overflow: hidden !important;
+    }
     .jumbotron {
         padding-left: 35rem;
         padding-right: 3rem;

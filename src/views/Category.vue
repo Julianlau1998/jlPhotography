@@ -1,14 +1,9 @@
 <template>
     <div>
         <navbar />
-        <landscape v-if="currentPage==='landscape'"/>
-        <macro v-if="currentPage==='macro'"/>
-        <city v-if="currentPage==='city'"/>
-        <astro v-if="currentPage==='astro'"/>
-        <abstract v-if="currentPage==='abstract'"/>
+        <gallery :title="currentPage" />
     </div>
 </template>
-
 <style>
     @media (max-width: 600px) {
         .listImage{
@@ -42,22 +37,13 @@
 </style>
 
 <script>
-import landscape from '../components/categories/landscape'
-import macro from '../components/categories/macro'
-import city from '../components/categories/city'
-import astro from '../components/categories/astro'
-import abstract from '../components/categories/abstract'
-import navbar from '../components/navbar'
-
+import navbar from '../components/navbar.vue'
+import gallery from '../components/gallery.vue'
 export default {
     components: {
-        landscape,
-        macro,
-        city,
-        astro,
-        abstract,
-        navbar
-    } ,
+        navbar,
+        gallery
+    },
     data () {
         return {
             currentPage: this.$route.params.name
