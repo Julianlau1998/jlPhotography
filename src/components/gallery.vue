@@ -21,19 +21,19 @@
         <div class="columns">
             <div class="column" v-for="(image, imageKey) in images" :key=imageKey>
                  <img
-                    :src="require(`../assets/${title}/${image}.jpg`)"
+                    :src="`https://jlphotography.netlify.app/img/${title}/${image}.jpg`"
                     @click="largerImage(image)"
                     class="listImage"
-                    onerror="console.log('test')"
+                    onerror="this.style.display='none'"
                 >
             </div>
         </div>
         <div v-if="largeImage">
             <div class="largeImageBackground" @click="largeImage = !largeImage"></div>
-            <img :src="require(`../assets/${title}/${images[currentImage]}.jpg`)" class="largeImage">
+            <img :src="`https://jlphotography.netlify.app/img/${title}/${images[currentImage]}.jpg`" class="largeImage">
             <button class="close" @click="closeImage">x</button>
             <button
-                v-if="currentImage!==images.length-1"
+                v-if="currentImage !== images.length-1"
                 class="arrowButton"
                 id="arrowRight"
                 @click="nextImage"
@@ -42,6 +42,7 @@
                     src="../assets/arrow.png"
                     alt="arrow"
                     class="arrowImage"
+                    onerror="this.style.display='none'"
                 ></button>
             <button
                 v-if="currentImage!==0"
@@ -71,7 +72,8 @@ export default {
         return {
             images: ['1','2','3','4','5'],
             currentImage: 0,
-            largeImage: false
+            largeImage: false,
+            currentImageAvailable: true
         }
     },
     methods: {
@@ -96,6 +98,20 @@ export default {
         closeImage() {
             this.largeImage = false
         }
+        // imageAvailable () {
+        //     let available = this.currentImage !== this.images.length-1
+        //     let img = new Image()
+        //     img.src = `https://jlphotography.netlify.app/img/${this.title}/${this.currentImage}.jpg`
+        //     img.onload = () => {
+        //         available = true
+        //         this.currentImageAvailable = true
+        //     }
+        //     img.onerror = () => {
+        //         available = false
+        //         this.currentImageAvailable = false
+        //     }
+        //     return available
+        // }
     }
 }
 </script>
@@ -106,7 +122,7 @@ export default {
 }
 .listImage {
     width: 35rem;
-    margin: 2rem;
+    margin: 1rem;
     border: 2px solid #acabab;
     border-radius: 25px;
     box-shadow: 1.5px 1.5px 3px #636161, -1.5px -1.5px 3px #e9e5e5;
@@ -233,12 +249,12 @@ img {
     z-index: -1;
 }
 
-.column {
+.columns {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
 
     @media (max-width: 600px) {
         .listImage{

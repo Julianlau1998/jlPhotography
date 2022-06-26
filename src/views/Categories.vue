@@ -82,19 +82,19 @@ export default {
                 -1.5px -1.5px 3px #ffffff; 
 }
 .landscape{
-    background:url('../assets/landscape/1.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('https://jlphotography.netlify.app/img/landscape/1.jpg') center no-repeat; background-size: 100% 100%;
 }
 .macro{
-    background:url('../assets/macro/1.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('https://jlphotography.netlify.app/img/macro/1.jpg') center no-repeat; background-size: 100% 100%;
 }
 .city{
-    background:url('../assets/city/1.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('https://jlphotography.netlify.app/img/city/1.jpg') center no-repeat; background-size: 100% 100%;
 }
 .astro{
-    background:url('../assets/astro/1.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('https://jlphotography.netlify.app/img/astro/1.jpg') center no-repeat; background-size: 100% 100%;
 }
 .abstract{
-    background:url('../assets/abstract/1.jpg') center no-repeat; background-size: 100% 100%;
+    background:url('https://jlphotography.netlify.app/img/abstract/1.jpg') center no-repeat; background-size: 100% 100%;
 }
 @media (max-width: 1690px) {
     .row {

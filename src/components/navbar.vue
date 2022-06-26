@@ -1,11 +1,13 @@
 <template>
     <div id="wrapper">
         <div class="navBackground" v-if="yOffset>40"></div>
-        <div class="logoWrapper" v-if="yOffset<40">
+        <div @click="$router.push('/')" class="logoWrapper" v-if="yOffset<40">
             <img src="../assets/jlp.png" alt="logo" class="logo">
-            <h3 id="title">JLPhotography</h3>
+            <h3 id="title">
+                JLPhotography
+            </h3>
         </div>
-        <div class="logoWrapper" v-else>
+        <div @click="$router.push('/')" class="logoWrapper" v-else>
             <h3 id="titleScrolledDown">JLP</h3>
             <img src="../assets/jlp.png" alt="logo" class="logoSmall">
         </div>
@@ -63,6 +65,7 @@ export default {
     }
     .logoWrapper {
         position: fixed;
+        cursor: pointer;
     }
     .navBackground {
         position: fixed;
